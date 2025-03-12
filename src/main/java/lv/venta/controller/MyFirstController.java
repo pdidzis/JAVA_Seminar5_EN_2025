@@ -1,5 +1,7 @@
 package lv.venta.controller;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 import org.springframework.stereotype.Controller;
@@ -37,16 +39,34 @@ public class MyFirstController {
 			
 			
 		}
+		
+		@GetMapping("/shoppingcart") // localhost:8080/shoppingcart
+		public String getControllerShopingCart(Model model) {
+			ArrayList<Product> shoppingCart = new ArrayList<Product>(
+					Arrays.asList(
+					new Product("Apple", 2.99f, "Green , healthy", 15),
+					new Product("Milk", 1.4f, "Fresh , healthy", 30))
+					);
+			//Product testApple = new Product("Apple", 2.99f, "Green , healthy", 15);
+			//Product testMilk = new Product("Milk", 1.4f, "Fresh , healthy", 30);
+			
+			//shoppingCart.addAll(Arrays.asList(testApple, testMilk));
+			model.addAttribute("box", shoppingCart);
+			
+			return "shopping-cart"; 
+		}
+		
 			
 		
 	
 	//TODO
-		//create new controler function as a get
-		// create a new product
-		//add this product in model
-		//specify which html file should be 
-		//create the html file
-	
+		//delcare controller function as get
+		//create arraylist for prodcuts
+		//add some products in the arraylist
+		//save arraylist in the box
+		//specify the html what will be showed
+		//create html file
+		// test controller
 
 
 }

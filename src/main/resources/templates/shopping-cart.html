@@ -1,0 +1,25 @@
+<html xmlns:th="https://www.thmeleaf.org">
+		
+	<body>
+		<p>Test product from Java</p>
+	
+		<table>
+			<tr th:each="temp : ${box}">
+			<td th:text="${temp.id}"></td>
+			<td th:text="${temp.title}"></td>
+			<td th:text="${temp.price}"></td>
+			<td th:text="${temp.description}"></td>
+			<td th:text="${temp.quantity}"></td>
+			
+			</tr>
+			
+			
+		</table>
+		
+		
+		
+		
+		
+	</body>
+
+</html>
